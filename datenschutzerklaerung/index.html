@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Datenschutzerklärung — SoL Home Automation</title>
+    <style>
+      main {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 4rem;
+        line-height: 1.6;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 1rem 0;
+      }
+      th,
+      td {
+        border: 1px solid #3a3a5a;
+        padding: 0.5rem 0.75rem;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: rgba(255, 255, 255, 0.06);
+      }
+      a {
+        color: #8ecae6;
+      }
+      .meta {
+        opacity: 0.85;
+      }
+      footer {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 1rem 1.25rem 3rem;
+        opacity: 0.85;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Datenschutzerklärung — SoL Home Automation</h1>
+      <p class="meta">Stand: 9. Oktober 2026 · Version 1.0.0 (Closed Test)</p>
+
+      <h2>Verantwortlicher</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>Firmenname</td>
+            <td>Leon Tieber (nat. Person)</td>
+          </tr>
+          <tr>
+            <td>Adresse</td>
+            <td>Leitersdorf im Raabtal 49</td>
+          </tr>
+          <tr>
+            <td>Stadt</td>
+            <td>8330 Feldbach</td>
+          </tr>
+          <tr>
+            <td>Land</td>
+            <td>Österreich</td>
+          </tr>
+          <tr>
+            <td>E-Mail</td>
+            <td>
+              <a href="mailto:tieberlabs@protonmail.com"
+                >tieberlabs@protonmail.com</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Web</td>
+            <td><a href="https://sol-home.at">https://sol-home.at</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte wenden Sie
+        sich an:
+        <a href="mailto:tieberlabs@protonmail.com">tieberlabs@protonmail.com</a>
+      </p>
+
+      <h2>1. Kurzfassung</h2>
+      <p>
+        SoL Home Automation verbindet Ihr ESP32-Gateway (Solar/Wechselrichter,
+        Speicher, Zähler) mit einer Cloud in der EU und zeigt Ertrag, Verbrauch
+        und Batteriestatus an, inkl. Automationen, Events und
+        Push-Benachrichtigungen.
+      </p>
+      <ul>
+        <li>
+          <strong
+            >Keine Werbung, keine Analytics-SDKs, kein Tracking, kein
+            Datenverkauf.</strong
+          >
+        </li>
+        <li>
+          <strong>Hosting ausschließlich EU:</strong> AWS Region
+          <code>eu-west-1</code> (Irland): Cognito (Login), AppSync/GraphQL +
+          DynamoDB (Geräte, Telemetrie), IoT Shadow-Proxy (Lambda via API
+          Gateway).
+        </li>
+        <li>
+          <strong>Zahlungen</strong> laufen über Google Play; die Abo-Prüfung
+          über RevenueCat (USA). Zahlungsdaten sehen wir nie.
+        </li>
+        <li><strong>Push-Versand</strong> läuft über Expo Push Service.</li>
+        <li>
+          <strong>Standort (ungefähr):</strong> wird
+          <strong>nur auf dem Gerät</strong> für die Bluetooth-Gerätesuche
+          verwendet (Android-Vorgabe), nie gespeichert oder übertragen.
+        </li>
+        <li>
+          <strong>Löschung:</strong> in der App unter Einstellungen → Sitzung →
+          Konto löschen, oder per E-Mail an uns.
+        </li>
+      </ul>
+
+      <h2>2. Welche Daten wir verarbeiten</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Daten</th>
+            <th>Zweck</th>
+            <th>Rechtsgrundlage (DSGVO)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              E-Mail-Adresse, Passwort (nur gehasht bei AWS Cognito),
+              Cognito-User-ID (<code>sub</code>), Verifizierungs-/Session-Token
+            </td>
+            <td>
+              Registrierung, Login, Sitzungswiederherstellung, Zuordnung Ihrer
+              Gateways
+            </td>
+            <td>Art. 6 Abs. 1 lit. b (Vertrag)</td>
+          </tr>
+          <tr>
+            <td>
+              Solar-Telemetrie (Leistung, Energie, Batterie-SoC, Metriken,
+              Gerätenamen, Templates/Definitionen)
+            </td>
+            <td>Dashboard, Verlauf/Tageswerte, Automationen</td>
+            <td>Art. 6 Abs. 1 lit. b</td>
+          </tr>
+          <tr>
+            <td>
+              Gerätekennungen (ESP-Seriennummer, Thing-Name, LAN-IP, WLAN-RSSI,
+              Verbindungsstatus, Konfigurationen, Automationsregeln inkl.
+              KI-Entwurfseingaben)
+            </td>
+            <td>
+              Gateway verknüpfen, Gerätestatus anzeigen, Regeln
+              speichern/ausführen
+            </td>
+            <td>Art. 6 Abs. 1 lit. b</td>
+          </tr>
+          <tr>
+            <td>Push-Token (Expo Push Token je Gateway)</td>
+            <td>Online/Offline- und Automations-Benachrichtigungen</td>
+            <td>
+              Art. 6 Abs. 1 lit. b, bei System-Prompt zusätzlich Einwilligung
+              Art. 6 Abs. 1 lit. a
+            </td>
+          </tr>
+          <tr>
+            <td>Abo-Status (aktiver Tarif Normal/Pro, Laufzeit, Gültigkeit)</td>
+            <td>
+              Freischaltung kostenpflichtiger Funktionen (Upload-Takt, Limits)
+            </td>
+            <td>Art. 6 Abs. 1 lit. b</td>
+          </tr>
+          <tr>
+            <td>Support-Anfragen (E-Mail-Inhalt)</td>
+            <td>Fehlerbehebung, Support</td>
+            <td>Art. 6 Abs. 1 lit. b / f</td>
+          </tr>
+          <tr>
+            <td>
+              Optionale Fehlerberichte (Sentry, nur wenn in der Build-Variante
+              aktiviert)
+            </td>
+            <td>Stabilität, Crash-Analyse</td>
+            <td>Art. 6 Abs. 1 lit. f</td>
+          </tr>
+          <tr>
+            <td>Ungefährer Standort (Bluetooth-Scan)</td>
+            <td>
+              <strong>Nur lokal auf dem Gerät</strong> für ESP32-Suche. Wird
+              nicht gespeichert, nicht übertragen.
+            </td>
+            <td>— (keine Speicherung)</td>
+          </tr>
+          <tr>
+            <td>
+              WLAN-Daten bei Einrichtung (SSID, von Ihnen eingegebenes Passwort)
+            </td>
+            <td>
+              WLAN auf dem ESP32 einrichten. Passwort geht direkt an Ihr Gerät,
+              wird in der Cloud nicht gespeichert.
+            </td>
+            <td>Art. 6 Abs. 1 lit. b</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        KI-Entwürfe für Automationen: Ihre Texteingabe (z. B. „Begrenze
+        Wechselrichter ab 4 kW Netzbezug“) wird serverseitig über unseren
+        EU-Endpoint (<code>…/ai/automation-draft</code>) an ein Sprachmodell
+        weitergeleitet und nur zur Regelerstellung verwendet. Der API-Schlüssel
+        liegt ausschließlich serverseitig (Lambda). Es wird nichts ohne Ihre
+        Prüfung gespeichert oder ausgeführt — Sie kontrollieren und speichern
+        den Entwurf selbst.
+      </p>
+
+      <h2>3. Berechtigungen auf dem Gerät</h2>
+      <ul>
+        <li>
+          <strong>Bluetooth (BLE):</strong> ESP32 finden und einrichten. Android
+          verlangt dafür die Standortberechtigung — wir greifen den Standort
+          nicht ab.
+        </li>
+        <li>
+          <strong>WLAN / Multicast (mDNS):</strong> Gateway im Heimnetz finden
+          (<code>ws.tcp.local</code>), lokale WS-Verbindung (Klartext nur im
+          LAN).
+        </li>
+        <li>
+          <strong>Benachrichtigungen:</strong> nur für Geräte-Events, wenn Sie
+          zustimmen. Abmeldung jederzeit in den Systemeinstellungen + in der App
+          (Push-Registrierung wird dann gelöscht).
+        </li>
+        <li>
+          <strong>Kamera, Mikrofon, Kontakte, präziser Standort:</strong> werden
+          nicht angefordert und nicht verarbeitet.
+        </li>
+      </ul>
+
+      <h2>4. Empfänger / Auftragsverarbeiter</h2>
+      <ul>
+        <li>
+          <strong>Amazon Web Services EMEA (Hosting, EU/Irland):</strong>
+          Cognito, AppSync, DynamoDB (<code>UserThings</code>,
+          <code>ThingTable</code>, <code>DevicePollData</code>,
+          <code>DeviceDayData</code>, <code>DeviceEvents</code>,
+          <code>PushSubscriptions</code>, <code>UserSubscriptions</code>), IoT
+          Core + Shadow-Proxy-Lambda. AV-Vertrag (AWS DPA).
+        </li>
+        <li>
+          <strong>Google Play (Google Ireland Ltd.):</strong> Kaufabwicklung.
+          Google verarbeitet Zahlungsdaten eigenverantwortlich.
+        </li>
+        <li>
+          <strong>RevenueCat, Inc. (USA):</strong> Abo-Verifizierung
+          (Quittungen, Berechtigungen <code>normal_data</code> /
+          <code>pro_data</code>, <code>app_user_id</code> =
+          Cognito-<code>sub</code>).
+        </li>
+        <li>
+          <strong>Expo (Expo Push Service, USA):</strong> Zustellung von
+          Push-Nachrichten (Push-Token + Nachrichtentext).
+        </li>
+      </ul>
+      <p>
+        Keine sonstige Weitergabe. Keine Übermittlung an Werbenetzwerke oder
+        Datenhändler.
+      </p>
+
+      <h2>5. Drittlandübermittlung (USA)</h2>
+      <p>
+        RevenueCat-, Expo- und ggf. Google-Server stehen in den USA. Die
+        Übermittlung stützt sich auf den EU-US Data Privacy
+        Framework-Angemessenheitsbeschluss bzw. ergänzend
+        EU-Standardvertragsklauseln (Art. 45/46 DSGVO). AWS-Verarbeitung bleibt
+        in der EU (<code>eu-west-1</code>).
+      </p>
+
+      <h2>6. Speicherdauer</h2>
+      <ul>
+        <li>
+          <strong>Tages-/Poll-Telemetrie:</strong> ca. 400 Tage Verlauf, danach
+          automatische Löschung.
+        </li>
+        <li>
+          <strong>Tages-Aggregate (Rollups):</strong> 5 Jahre, danach
+          automatische Löschung.
+        </li>
+        <li><strong>Konto-/Gerätedaten:</strong> bis zur Kontolöschung.</li>
+        <li>
+          <strong>Push-Token:</strong> bis zur Abmeldung bzw. Kontolöschung.
+        </li>
+        <li>
+          <strong>Support-Mails:</strong> max. 24 Monate nach Abschluss des
+          Vorgangs.
+        </li>
+        <li><strong>Backups:</strong> laufen max. 90 Tage nach.</li>
+        <li>
+          SoL Gerät puffert ohne Abo ca. 3 Tage lokal im Flash und lädt bei
+          Re-Abo nach; serverseitig wird unabonnierte Telemetrie verworfen.
+        </li>
+      </ul>
+
+      <h2>7. Ihre Rechte (Art. 12–21 DSGVO)</h2>
+      <p>
+        Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit,
+        Widerspruch sowie Widerruf erteilter Einwilligungen (z. B.
+        Benachrichtigungen) — formlos an
+        <a href="mailto:tieberlabs@protonmail.com">tieberlabs@protonmail.com</a
+        >. Wir antworten innerhalb eines Monats.
+      </p>
+      <p>
+        <strong>Konto selbst löschen:</strong> App → Einstellungen → Sitzung →
+        Konto löschen. Das entfernt Login, verknüpfte Geräte und Cloud-Daten.
+        Ihr Play-Abo müssen Sie zusätzlich in den Google-Play-Einstellungen
+        kündigen; es läuft bis zum Ende des bezahlten Zeitraums.
+      </p>
+      <p>
+        <strong>Beschwerde:</strong> Österreichische Datenschutzbehörde (DSB),
+        Barichgasse 40–42, 1030 Wien,
+        <a href="https://www.dsb.gv.at">https://www.dsb.gv.at</a> — oder die
+        Aufsichtsbehörde Ihres Aufenthaltsstaats.
+      </p>
+
+      <h2>8. Sicherheit</h2>
+      <p>
+        TLS-verschlüsselte Übertragung (HTTPS/WSS; Klartext-WS nur direkt im
+        Heim-LAN zum ESP32), Cognito-<code>idToken</code> als
+        <code>Authorization</code>-Header für AppSync/Shadow-Proxy, Zugriff nur
+        auf eigene Things (Prüfung anhand Cognito-<code>sub</code>). Keine
+        geheimen Schlüssel in der App (LLM-Keys nur serverseitig).
+      </p>
+
+      <h2>9. Kinder</h2>
+      <p>
+        Die App richtet sich nicht an Kinder unter 16 Jahren. Konten unter 16
+        werden nach Kenntnisnahme gelöscht.
+      </p>
+
+      <h2>10. Änderungen</h2>
+      <p>
+        Bei wesentlichen Änderungen informieren wir in der App / per E-Mail. Der
+        Stand oben ist maßgeblich. Neue Versionen werden in der Play Console
+        dokumentiert.
+      </p>
+
+      <hr />
+
+      <h3>Anhang: Hinweise zum Play-Formular „Datensicherheit“</h3>
+      <ul>
+        <li>Erhebung/Freigabe: ja (Konto + Telemetrie).</li>
+        <li>
+          E-Mail: Erhebung zu App-Funktion + Kontoverwaltung; Weitergabe an AWS,
+          RevenueCat. Kein Verkauf.
+        </li>
+        <li>
+          Ungefährer Standort: Erhebung zu App-Funktion (BLE-Suche), nur
+          geräteinterne Verarbeitung, keine Speicherung/Freigabe.
+        </li>
+        <li>
+          App-Aktivität/Telemetrie (Energiewerte, Geräte-IDs): Erhebung zu
+          App-Funktion; Hosting AWS. Kein Verkauf.
+        </li>
+        <li>
+          Kaufverlauf: Erhebung zu App-Funktion; Verarbeitung durch Google Play
+          + RevenueCat.
+        </li>
+        <li>
+          Daten verschlüsselt übertragen: ja. Löschung möglich: ja (in der App +
+          per E-Mail).
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <p>
+        Stand: 9. Oktober 2026 · Version 1.0.0 ·
+        <a href="./index.html">SoL-Home</a>
+      </p>
+    </footer>
+  </body>
+</html>
